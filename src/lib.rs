@@ -93,8 +93,8 @@ impl Universe {
   }
 
   pub fn new() -> Universe {
-    let width = 256;
-    let height = 128;
+    let width = 1024;
+    let height = 1024;
 
     /** Seeds 
      * i % 11 == 0 || i % 7 == 0 || i % 13 == 0
