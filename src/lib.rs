@@ -93,12 +93,20 @@ impl Universe {
   }
 
   pub fn new() -> Universe {
-    let width = 64;
-    let height = 64;
+    let width = 256;
+    let height = 128;
+
+    /** Seeds 
+     * i % 11 == 0 || i % 7 == 0 || i % 13 == 0
+     * i % 19 == 0 || i % 17 == 0 || i % 13 == 0
+     * i % 29 == 0 || i % 43 == 0 || i % 47 == 0
+     * i % 29 == 0 || i % 59 == 0 || i % 67 == 0 || i % 7 == 0 || i % 5 == 0 || i % 3 == 0
+    */
+
 
     let cells = (0 .. width*height)
       .map(|i| {
-        if i % 2 == 0 || i % 7 == 0 {
+        if i % 29 == 0 || i % 59 == 0 || i % 67 == 0 || i % 7 == 0 || i % 5 == 0 || i % 3 == 0 {
           Cell::Alive
         } else {
           Cell::Dead
